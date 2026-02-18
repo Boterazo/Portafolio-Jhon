@@ -1,0 +1,168 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  line-height: 1.6;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  width: 100%; /* se adapta al ancho del contenedor */
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* 🔥 recorta manteniendo proporción */
+  -o-object-position: center;
+     object-position: center; /* 🔥 centra la imagen */
+}
+
+.active {
+  background-color: white;
+  color: black;
+  background-position: right;
+}
+
+body {
+  background-color: rgba(53, 48, 48, 0.9647058824);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem 0px;
+  font-size: 10px;
+}
+body .contenedor {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  flex: 1;
+  height: 100%;
+}
+body .contenedor .barra-lateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  background-color: transparent;
+  color: #2C4E7A;
+  width: 15rem;
+  height: 95vh;
+  border-radius: 30px;
+  overflow: hidden;
+  gap: 10px;
+}
+body .contenedor .barra-lateral .Foto-perfil {
+  border-radius: 50%;
+  width: 80%;
+  aspect-ratio: 1/1; /* 🔥 Alto proporcional al ancho */
+  overflow: hidden;
+}
+body .contenedor .barra-lateral a {
+  color: #656c75;
+  font-size: 2rem;
+}
+body .contenedor .barra-lateral i {
+  display: block;
+  width: 70%;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 10px 0px;
+  margin: 0 auto;
+  color: #b4bcc5;
+  font-size: 1rem;
+}
+body .contenedor .contenido-principal {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8FAFC;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  overflow: hidden;
+}
+body .contenedor .contenido-principal nav {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 5rem;
+  padding-left: 10rem;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+body .contenedor .contenido-principal nav div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 50%;
+  background-color: #F1F5F9;
+  border-radius: 20px;
+  gap: 10px;
+}
+body .contenedor .contenido-principal nav div a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 1.5rem;
+  color: #BFC3C8;
+  font-size: 0.875rem;
+  border-radius: 20px;
+  transition: background-color 0.5s, color 0.5s, background-position 0.5s ease;
+}
+body .contenedor .contenido-principal nav div a:hover {
+  background-color: white;
+  color: black;
+  background-position: right;
+}
+body .contenedor .contenido-principal .proyectos-contenido {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap; /* 👈 IMPORTANTE */
+  gap: 20px;
+  width: 100%;
+  justify-content: center; /* espacio entre items */
+  align-items: center;
+  padding-left: 10rem;
+  overflow-y: auto;
+}
+body .contenedor .contenido-principal .proyectos-contenido .tiktok-embed {
+  flex-grow: 1;
+  max-width: 325px; /* tamaño recomendado por TikTok */
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+}
+body .contenedor .contenido-principal .API_DOCS {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center; /* espacio entre items */
+  align-items: center;
+  padding-left: 10rem;
+  overflow-y: auto;
+}
+body .contenedor .contenido-principal .API_DOCS iframe {
+  width: 100%;
+  height: 100%;
+}
+body .contenedor .contenido-principal .hidden {
+  display: none;
+}/*# sourceMappingURL=perfil.css.map */

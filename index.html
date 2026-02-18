@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./Estilos/styles.css">
+    
+    <title>INICIO</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-form">
+            <h1 id="titulo">LOGIN</h1>
+            <div class="buttons">
+                <a href="#" class="LOGIN active">LOGIN</a>
+                <a href="#" class="REGISTRAR">REGISTRAR</a>  
+            </div>
+            <div class="conteiner-form" >
+                <form id="Formulario-Login"  >
+                    <input type="email" name="email" placeholder="Email" id="login-email">
+                    <input type="password" name="password" placeholder="Password" id="login-password">
+                    <button type="submit">INICIO</button>
+                    <h1 class="error_login hidden">Error: Usuario registrado</h1>
+                </form>
+                <form id="Formulario-Registro" autocomplete="off" class="hidden">
+                    <input type="text" name="username" placeholder="Nombre de Usuario">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <button type="submit">REGISTRAR</button>
+                    <h1 class="error_registro hidden">Error: Usuario registrado</h1>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./JavaScrip/main.js"></script>
+</body>
+</html>
