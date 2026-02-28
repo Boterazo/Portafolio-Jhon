@@ -125,7 +125,14 @@ Formulario_Registro.addEventListener("submit",async function(e) {
     console.log("Email: ",email);
     console.log("Password: ",password);
 
-    // Aquí Envio los datos a un servidor
+    Swal.fire({
+            title: 'Iniciando Registro...',
+            text: 'Por favor espera',
+            allowOutsideClick: false,
+            didOpen: () => {
+            Swal.showLoading(); // activa el spinner
+        }
+    });
     // Aquí Envio los datos a un servidor
     try {
         const respuesta = await RegistrarUser(username,email, password);
@@ -136,16 +143,19 @@ Formulario_Registro.addEventListener("submit",async function(e) {
         if (respuesta["INFO"] === "Email ya reguistrado en la base de datos") {
             console.log("Usuario ya registrado");
             MSM_error_registro.classList.remove("hidden");
-
+            Swal.close();
         } else {
+            Swal.close();
             Cambiar_Login();
         }
 
     } catch (error) {
+        Swal.close();
         console.error("Error:", error);
     }
 });
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
 
 
