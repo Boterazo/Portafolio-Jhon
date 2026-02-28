@@ -86,11 +86,13 @@ Formulario_Login.addEventListener("submit",async  function(e) {
         if (respuesta["INF"] === "Email NO REGISTRADO") {
           MSM_error_login.textContent = "Error: Email no registrado";
             MSM_error_login.classList.remove("hidden");
+            Swal.close();
             return;
         }
         if (respuesta["INF"] === "CONTRASEÑA INCORRECTA") {
           MSM_error_login.textContent = "Error: Contraseña Incorrecta";
           MSM_error_login.classList.remove("hidden");
+          Swal.close();
           return;
         }
 
@@ -144,6 +146,7 @@ Formulario_Registro.addEventListener("submit",async function(e) {
     }
 });
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
 
 
