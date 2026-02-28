@@ -69,6 +69,14 @@ Formulario_Login.addEventListener("submit",async  function(e) {
     console.log("Email: ",email);
     console.log("Password: ",password);
 
+    Swal.fire({
+            title: 'Iniciando sesión...',
+            text: 'Por favor espera',
+            allowOutsideClick: false,
+            didOpen: () => {
+            Swal.showLoading(); // activa el spinner
+        }
+    });
     // Aquí Envio los datos a un servidor
     try {
         const respuesta = await loginUser(email, password);
@@ -86,6 +94,7 @@ Formulario_Login.addEventListener("submit",async  function(e) {
           return;
         }
 
+        Swal.close();
         // Guardar token
         localStorage.setItem("token", respuesta.access_token);
         const token = localStorage.getItem("token");
@@ -96,6 +105,7 @@ Formulario_Login.addEventListener("submit",async  function(e) {
         window.location.href = "perfil.html";
 
     } catch (error) {
+        Swal.close();
         console.error("Error:", error);
     }
 });
@@ -134,6 +144,7 @@ Formulario_Registro.addEventListener("submit",async function(e) {
     }
 });
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
 
 
